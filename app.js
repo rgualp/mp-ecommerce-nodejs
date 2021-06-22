@@ -25,14 +25,6 @@ app.get("/success", async (req, res) => {
   res.render("success");
 });
 
-app.get("/pending", async (req, res) => {
-  res.render("pending");
-});
-
-app.get("/failure", async (req, res) => {
-  res.render("failure");
-});
-
 const listener = app.listen(port, function () {
   console.log("Listening on port " + listener.address().port);
 });
