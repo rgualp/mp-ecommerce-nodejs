@@ -48,7 +48,6 @@ class MercadoPagoService {
       notification_url: "https://www.your-site.com/ipn",
       external_reference: "rolandogual@googlemail.com",
     });
-    console.log(preference);
     return {
       preferenceId: preference.body.id,
       init_point: preference.body.init_point,
