@@ -44,7 +44,7 @@ class MercadoPagoService {
         ],
         installments: 6,
       },
-      notification_url: "https://www.your-site.com/ipn",
+      notification_url: "https://rgualp-mp-commerce-nodejs.herokuapp.com/hooks",
       external_reference: "rolandogual@googlemail.com",
     });
     return {
