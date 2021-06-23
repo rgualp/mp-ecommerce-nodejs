@@ -26,7 +26,7 @@ class MercadoPagoService {
         },
       },
       back_urls: {
-        success: "https://rgualp-mp-commerce-nodejs.herokuapp.com",
+        success: "https://rgualp-mp-commerce-nodejs.herokuapp.com/success",
         failure: "https://rgualp-mp-commerce-nodejs.herokuapp.com/failure",
         pending: "https://rgualp-mp-commerce-nodejs.herokuapp.com/pending",
       },

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const ws = new WebSocket("ws://localhost:3000/ws");
+  const ws = new WebSocket("ws://rgualp-mp-commerce-nodejs.herokuapp.com/ws");
   const options = {
     settings: {
       duration: 5000,
