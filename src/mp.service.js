@@ -18,16 +18,16 @@ class MercadoPagoService {
         },
       ],
       payer: {
-        name: "Rolando",
-        surname: "Gual",
-        email: "rolandogual@googlemail.com",
+        name: "Lalo",
+        surname: "Landa",
+        email: "test_user_63274575@testuser.com",
         identification: {
           type: "CI",
           number: "63650826",
         },
       },
       back_urls: {
-        success: "https://rgualp-mp-commerce-nodejs.herokuapp.com/success",
+        success: "https://rgualp-mp-commerce-nodejs.herokuapp.com",
         failure: "https://rgualp-mp-commerce-nodejs.herokuapp.com/failure",
         pending: "https://rgualp-mp-commerce-nodejs.herokuapp.com/pending",
       },
