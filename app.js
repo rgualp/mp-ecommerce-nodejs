@@ -27,7 +27,7 @@ app.get("/detail", async (req, res) => {
   res.render("detail", data);
 });
 
-app.post("/success", async (req, res) => {
+app.get("/success", async (req, res) => {
   let response = new ResponseModel({
     response: JSON.stringify(req.query),
     type: "success",
