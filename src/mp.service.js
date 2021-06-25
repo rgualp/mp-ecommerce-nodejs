@@ -1,17 +1,20 @@
 const mercadopago = require("mercadopago");
 mercadopago.configure({
   access_token: "APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398",
+  integrator_id: "dev_24c65fb163bf11ea96500242ac130004",
+  corporation_id: "469485398"
 });
 
+const HOST = "https://rgualp-mp-commerce-nodejs.herokuapp.com";
 class MercadoPagoService {
   async createPreference(data) {
+    let urlImg = data?.img?.slice(1);
     let preference = await mercadopago.preferences.create({
       items: [
         {
           title: data.title,
-          picture_url:
-            "http://localhost:3000/assets/motorola-moto-g5-plus-1.jpg",
-          description: "Descripción del Item",
+          picture_url: `${HOST}${urlImg}`,
+          description: "Dispositivo móvil de Tienda e-commerce",
           quantity: 1,
           unit_price: parseFloat(data.price),
         },
@@ -20,15 +23,20 @@ class MercadoPagoService {
         name: "Lalo",
         surname: "Landa",
         email: "test_user_63274575@testuser.com",
-        identification: {
-          type: "CI",
-          number: "63650826",
+        phone: {
+          area_code: "11",
+          number: 22223333,
+        },
+        address: {
+          street_name: "Falsa",
+          street_number: 123,
+          zip_code: "1111",
         },
       },
       back_urls: {
-        success: "https://rgualp-mp-commerce-nodejs.herokuapp.com/success",
-        failure: "https://rgualp-mp-commerce-nodejs.herokuapp.com/failure",
-        pending: "https://rgualp-mp-commerce-nodejs.herokuapp.com/pending",
+        success: `${HOST}/success`,
+        failure: `${HOST}/failure`,
+        pending: `${HOST}/pending`,
       },
       auto_return: "approved",
       payment_methods: {
@@ -44,8 +52,8 @@ class MercadoPagoService {
         ],
         installments: 6,
       },
-      notification_url: "https://rgualp-mp-commerce-nodejs.herokuapp.com/hooks",
-      external_reference: "rolandogual@googlemail.com",
+      notification_url: `${HOST}/hooks`,
+      external_reference: "rolandogual@gmail.com",
     });
     return {
       preferenceId: preference.body.id,
