@@ -52,7 +52,7 @@ class MercadoPagoService {
         ],
         installments: 6,
       },
-      notification_url: `${HOST}/hooks`,
+      notification_url: `${HOST}/hooks?source_news=webhooks`,
       external_reference: "rolandogual@gmail.com",
     });
     return {
